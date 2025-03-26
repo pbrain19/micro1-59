@@ -208,9 +208,9 @@ export function CurrencyConverter() {
               />
             </div>
 
-            <div className="flex justify-center md:mt-6">
+            <div className="flex justify-center md:mt-6 mt-4">
               <Button
-                variant="ghost"
+                variant="secondary"
                 size="icon"
                 onClick={handleSwap}
                 className="rounded-full"

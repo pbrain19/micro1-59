@@ -53,7 +53,7 @@ export function CurrencyInput({
             variant="outline"
             role="combobox"
             aria-expanded={open}
-            className="md:w-[180px] w-[100px] justify-between rounded-l-none border-l-0"
+            className="md:w-[140px] w-[110px] justify-between rounded-l-none border-l-0"
           >
             <div className="flex items-center gap-2">
               {selectedCurrency?.flag && (
