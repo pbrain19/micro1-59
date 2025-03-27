@@ -249,18 +249,20 @@ export function CurrencyConverter() {
           <div className="flex items-center justify-end max-sm:hidden">
             {modalButtons()}
           </div>
-          <div className="flex md:flex-row flex-col-reverse max-sm:w-full  items-center max-sm:items-end space-x-2">
-            <div className="max-sm:w-full text-right max-sm:mt-4">
-              <div className="sm:hidden float-left">{modalButtons()}</div>
-              <p className="text-sm text-muted-foreground">
-                1 {fromCurrency} = {exchangeRate} {toCurrency}
-              </p>
-              <p className="text-xs text-muted-foreground">
-                Last updated: {lastUpdated}
-              </p>
+          <div className="flex md:flex-row flex-col-reverse max-sm:w-full  items-center max-sm:items-end md:space-x-2">
+            <div className="max-sm:w-full  max-sm:mt-4 max-sm:flex max-sm:flex-row max-sm:justify-between">
+              <div className="sm:hidden">{modalButtons()}</div>
+              <div className="text-right">
+                <p className="text-sm text-muted-foreground">
+                  1 {fromCurrency} = {exchangeRate} {toCurrency}
+                </p>
+                <p className="text-xs text-muted-foreground">
+                  Last updated: {lastUpdated}
+                </p>
+              </div>
             </div>
             <Button
-              variant="secondary"
+              variant="default"
               size="sm"
               className="w-full md:w-auto max-md:mb-2"
               onClick={toggleFavorite}

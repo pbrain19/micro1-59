@@ -37,7 +37,7 @@ export function FavoritesDialog({
               {favorites.map((pair, index) => (
                 <div
                   key={index}
-                  className="flex cursor-pointer items-center justify-between p-3 hover:bg-accent hover:border-accent-foreground hover:border-1"
+                  className="flex cursor-pointer items-center justify-between p-3 hover:bg-accent"
                   onClick={() => selectCurrencyPair(pair.from, pair.to)}
                 >
                   <div className="flex items-center space-x-3">
