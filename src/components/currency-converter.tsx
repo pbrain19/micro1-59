@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { toast } from "sonner";
-import { ArrowLeftRight, History, Star } from "lucide-react";
+import { ArrowLeftRight, History } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
@@ -183,26 +183,9 @@ export function CurrencyConverter() {
           </TooltipContent>
         </Tooltip>
       </TooltipProvider>
-
-      <TooltipProvider>
-        <Tooltip>
-          <TooltipTrigger asChild>
-            <Button
-              variant="outline"
-              size="icon"
-              onClick={() => setFavoritesOpen(true)}
-            >
-              <Star
-                className="h-4 w-4"
-                fill={isCurrentPairFavorite ? "currentColor" : "none"}
-              />
-            </Button>
-          </TooltipTrigger>
-          <TooltipContent>
-            <p>Favorites</p>
-          </TooltipContent>
-        </Tooltip>
-      </TooltipProvider>
+      <Button variant="outline" onClick={() => setFavoritesOpen(true)}>
+        Favorites
+      </Button>
     </div>
   );
 
@@ -232,9 +215,13 @@ export function CurrencyConverter() {
               </Button>
             </div>
 
-            <div>
-              <label className="text-sm font-medium leading-none">
-                Converted to
+            <div className="max-sm:mt-4 mt-2">
+              <label className="text-sm font-medium leading-none flex flex-row justify-between">
+                <span className="text-xs ">Converted to:</span>
+
+                <span className="text-xs ">
+                  1 {fromCurrency} = {exchangeRate} {toCurrency}
+                </span>
               </label>
               <CurrencyInput
                 value={toAmount}
@@ -253,9 +240,7 @@ export function CurrencyConverter() {
             <div className="max-sm:w-full  max-sm:mt-4 max-sm:flex max-sm:flex-row max-sm:justify-between">
               <div className="sm:hidden">{modalButtons()}</div>
               <div className="text-right">
-                <p className="text-sm text-muted-foreground">
-                  1 {fromCurrency} = {exchangeRate} {toCurrency}
-                </p>
+                <p className="text-sm text-muted-foreground"></p>
                 <p className="text-xs text-muted-foreground">
                   Last updated: {lastUpdated}
                 </p>
@@ -263,7 +248,6 @@ export function CurrencyConverter() {
             </div>
             <Button
               variant="default"
-              size="sm"
               className="w-full md:w-auto max-md:mb-2"
               onClick={toggleFavorite}
             >
